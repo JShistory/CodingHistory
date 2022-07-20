@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class baseball {
+
+public static void main(String[] args) {
+	Scanner input = new Scanner(System.in);
+	String n = input.nextLine();
+	int row = n.charAt(1) - '0';
+	int column = n.charAt(0) - 'a' + 1;
+
+	int next_row = 0;
+	int next_column = 0;
+	int result = 0;
+	int[][] steps = new int[][] { { 2, 1 }, { 2, -1 }, { -2, 1 }, { -2, -1 }, { 1, 2 }, { -1, 2 }, { 1, -2 },
+			{ -1, -2 } };
+	for (int i = 0; i < steps.length; i++) {
+		next_row = row + steps[i][0];
+		next_column = column + steps[i][1];
+
+		if (next_row >= 1 && next_row <= 8 && next_column >= 1 && next_column <= 8) {
+			result += 1;
+		}
+	}
+	System.out.println(result);
+}
+}
+charAt을 int형으로 반환하면 아스키코드값이나옴.
+따라서 아스키코드값이 아니고 문자열 1을 숫자로 접근하고 싶으면 '0'을 빼준다.
+
+In Python
+
+n = input()
+row = int(n[1])
+column = int(ord(n[0])) - int(ord('a')) + 1
+
+steps = [(2,1),(2,-1),(-2,1),(-2,-1),(1,2),(-1,2),(1,-2),(-1,-2)]
+result = 0
+for step in steps:
+next_row = row + step[0]
+next_column = column + step[1]
+
+if next_row >=1 and next_row <= 8 and next_column >=1 and next_column <=8:
+    result +=1
+print(result)
