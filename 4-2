@@ -1,0 +1,22 @@
+import java.util.*;
+public class baseball {
+
+public static void main(String[] args) {
+	String a = "";
+	Scanner input = new Scanner(System.in);
+	int n = input.nextInt();
+	int result = 0;
+	for(int i=0; i<n+1; i++) {
+		for(int j=0; j<60; j++) {
+			for(int k=0; k<60; k++) {	
+				a =Integer.toString(i)+Integer.toString(j)+Integer.toString(k);
+				if(a.contains("3")) {
+					result +=1;
+				}
+				
+			}
+		}
+	}
+    System.out.println(result);
+}
+}
