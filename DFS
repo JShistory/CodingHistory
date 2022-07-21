@@ -1,0 +1,33 @@
+DFS(Depth-First Search)는 해석 그대로 깊이 우선 탐색이다.
+즉 그래프에서 깊은 부분을 우선적으로 탐색하는 알고리즘이다.
+2학년 자료구조 시간 때 배웠는데, 제대로 이해하지 못하고 넘어간 것 같다
+
+그래프의 기본 구조는 노드, 간선, 정점이 있는데 노드는 한 지역이라 생각하고 간선은 지역(노드)으로 가는 길(간선)이라고 생각한다.
+정점은 노드라고 본다.
+DFS의 구체적인 동작 과정은 이렇다
+1. 탐색 시작 노드를 스택에 삽입하고 방문 처리를 한다 / visited[v] = True (초기에는 visited의 값들이 다 False임)
+2. 스택의 최상단 노드에 방문하지 않은 인접 노드가 있으면 그 인접 노드를 스택에 넣고 방문 처리를 한다. 방문하지 않은 인접 노드가 없으면 스택에서 최상단 노드를 꺼낸다.
+3. 2번의 과정을 더 이상 수행할 수 없을 때까지 반복한다. (재귀함수 활용 가능)
+
+이 과정을 코드로 그대로 짜본다면(Python)
+visited = [False] * n  //n은 그래프의 크기가 되겠다.
+graph
+visited[v] = True      //v를 시작으로 한다면 v를 방문처리 즉 True값으로 바꾸어주고
+for i in graph[v]:     // v의 인접한 노드들(graph[v])을 i에 저장하면서
+  if not visited[i]:    // 만약에 visited[i]의 값이 False이면
+     dfs(graph, i, visited)   // 재귀함수를 활용해서 다시 반복함
+     
+코드화
+def dfs(graph, v, visited):
+    visited[v] = True
+    print(v, end=' ')
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, i, visited)
+
+
+
+graph =[[],[2,3,8],[1,7],[1,4,5],[3,5],[3,4],[7],[2,6,8],[1,7]]
+visited = [False] * 9
+dfs(graph,1,visited)
+
