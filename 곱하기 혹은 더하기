@@ -10,5 +10,14 @@ for i in range(len(ssort)-1):           #마지막 인덱스값을 저장했기 
         m_num +=int(ssort[i])          #아니면 더함.
 print(m_num) 
     
-        
-    
+
+
+
+
+
+문자열 정렬    
+s = "adfe"
+
+s1 = s.sort()			# wrong
+s2 = sorted(s)			# ['a','d','e','f'] 
+s3 = ''.join(sorted(s))		# "adef"
