@@ -1,0 +1,18 @@
+내가 푼 코드
+n = int(input())
+groups= list(map(int, input().split(" ")))
+#그룹 모험가들을 정렬함
+groups.sort()
+people = 0
+result = 0
+for i in groups:
+    people +=1
+    if people == i:
+        result +=1
+        people = 0
+        #for문으로 people을 한명씩 증가시켜서 people과 공포도(i)와 같으면
+        #그룹이 만들어졌다고 생각하고 result값 1 증가.
+        #그와 동시에 people은 0으로 초기화
+        
+        
+print(result)
