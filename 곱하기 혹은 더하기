@@ -2,15 +2,26 @@ s = input()
 #s를 정렬함.
 ssort = ''.join(sorted(s))
 #모든수가 0일수도 있어서 정렬을한뒤에 마지막 인덱스값을 m_num으로 저장함.
-m_num = int(a[-1])
+m_num = int(ssort[-1])
 for i in range(len(ssort)-1):           #마지막 인덱스값을 저장했기 때문에 for범위는 0부터 ssort-1까지
-    if int(ssort[i]) >= 2:                     #만약 숫자가 2이상이면 곱하고
-        m_num *=int(ssort[i])
+    if int(ssort[i]) <=1 or m_num<=1:                     
+        m_num +=int(ssort[i])
     else:
-        m_num +=int(ssort[i])          #아니면 더함.
+        m_num *=int(ssort[i])          
 print(m_num) 
-    
 
+
+교재 예시
+data = input()
+result = int(data[0])
+
+for i in range(1, len(data)):
+    num = int(data[i])
+    if num <= 1 or result <= 1:
+        result += num
+    else:
+        result *= num
+print(result)
 
 
 
