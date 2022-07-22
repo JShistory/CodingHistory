@@ -16,3 +16,19 @@ for i in groups:
         
         
 print(result)
+
+교재 답안 예시
+n = int(input())
+data = list(map(int, input().split()))
+data.sort()
+
+result = 0
+count = 0
+
+for i in data:
+    count +=1
+    if count >=i:
+        result +=1
+        count =0
+print(result)
+교재에선 count >=i로 해놨는데 어차피 1씩증가하니 count == i나 count>=i나 상관없을것같다.
