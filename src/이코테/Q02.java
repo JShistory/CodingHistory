@@ -12,7 +12,6 @@ public class Q02 {
 		int result = 0;
 		for(int i=0; i<n.length(); i++) {
 			a = (Integer.valueOf(n.charAt(i)-'0'));
-			System.out.println(a+2);
 			if(a<=1 || result<=1) {
 				result +=a;
 			}
@@ -25,5 +24,4 @@ public class Q02 {
 		System.out.println(result);
 
 	}
-
 }
